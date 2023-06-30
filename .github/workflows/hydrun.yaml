@@ -21,13 +21,25 @@ jobs:
             flags: ""
             cmd: go test ./...
             dst: out/*
-          - id: go
+          - id: go-ram-dl
             src: .
             os: golang:bullseye
             flags: ""
             cmd: ./Hydrunfile go ram-dl
             dst: out/*
-          - id: gccgo
+          - id: gccgo-ram-dl
+            src: .
+            os: ghcr.io/pojntfx/bagccgop-base-sid
+            flags: -e '--privileged'
+            cmd: ./Hydrunfile gccgo ram-dl
+            dst: out/*
+          - id: go-ram-dl-server
+            src: .
+            os: golang:bullseye
+            flags: ""
+            cmd: ./Hydrunfile go ram-dl
+            dst: out/*
+          - id: gccgo-ram-dl-server
             src: .
             os: ghcr.io/pojntfx/bagccgop-base-sid
             flags: -e '--privileged'

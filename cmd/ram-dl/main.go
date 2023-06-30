@@ -24,6 +24,7 @@ func main() {
 	raddr := flag.String("raddr", "localhost:1337", "Remote address for the fRPC r3map backend server")
 
 	chunkSize := flag.Int64("chunk-size", 4096, "Chunk size to use")
+
 	chunking := flag.Bool("chunking", true, "Whether the backend requires to be interfaced with in fixed chunks")
 
 	verbose := flag.Bool("verbose", false, "Whether to enable verbose logging")
@@ -177,6 +178,8 @@ func main() {
 	}
 
 	defer func() {
+		syscall.Sync()
+
 		if output, err := exec.Command("swapoff", devPath).CombinedOutput(); err != nil {
 			log.Printf("Could not enable partition for swap: %s", output)
 
