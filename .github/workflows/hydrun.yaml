@@ -38,14 +38,14 @@ jobs:
             src: .
             os: golang:bullseye
             flags: ""
-            cmd: ./Hydrunfile go ram-dl
+            cmd: ./Hydrunfile go ram-ul
             dst: out/*
           # Disabled due to "error obtaining VCS status: exit status 128" error
           # - id: gccgo-ram-ul
           #   src: .
           #   os: ghcr.io/pojntfx/bagccgop-base-sid
           #   flags: -e '--privileged'
-          #   cmd: ./Hydrunfile gccgo ram-dl
+          #   cmd: ./Hydrunfile gccgo ram-ul
           #   dst: out/*
 
     steps:
