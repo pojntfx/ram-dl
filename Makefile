@@ -5,7 +5,7 @@ OUTPUT_DIR ?= out
 DST ?=
 
 # Private variables
-obj = ram-dl ram-dl-server
+obj = ram-dl ram-ul
 all: $(addprefix build/,$(obj))
 
 # Build

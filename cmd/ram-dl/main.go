@@ -44,6 +44,8 @@ func main() {
 	}
 	defer client.Close()
 
+	log.Println("Connected to", *raddr)
+
 	devPath, err := utils.FindUnusedNBDDevice()
 	if err != nil {
 		panic(err)

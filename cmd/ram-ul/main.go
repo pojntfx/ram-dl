@@ -42,7 +42,7 @@ func main() {
 			knownBackendTypes,
 		),
 	)
-	location := flag.String("location", filepath.Join(os.TempDir(), "ram-dl-server"), "Backend's directory (for directory backend) or file (for file backend)")
+	location := flag.String("location", filepath.Join(os.TempDir(), "ram-ul"), "Backend's directory (for directory backend) or file (for file backend)")
 	chunking := flag.Bool("chunking", true, "Whether the backend requires to be interfaced with in fixed chunks in tests")
 
 	verbose := flag.Bool("verbose", false, "Whether to enable verbose logging")

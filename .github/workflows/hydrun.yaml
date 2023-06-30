@@ -33,13 +33,13 @@ jobs:
             flags: -e '--privileged'
             cmd: ./Hydrunfile gccgo ram-dl
             dst: out/*
-          - id: go-ram-dl-server
+          - id: go-ram-ul
             src: .
             os: golang:bullseye
             flags: ""
             cmd: ./Hydrunfile go ram-dl
             dst: out/*
-          - id: gccgo-ram-dl-server
+          - id: gccgo-ram-ul
             src: .
             os: ghcr.io/pojntfx/bagccgop-base-sid
             flags: -e '--privileged'
