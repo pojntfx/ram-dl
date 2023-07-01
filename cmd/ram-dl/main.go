@@ -15,7 +15,7 @@ import (
 	v1frpc "github.com/pojntfx/r3map/pkg/api/frpc/mount/v1"
 	lbackend "github.com/pojntfx/r3map/pkg/backend"
 	"github.com/pojntfx/r3map/pkg/chunks"
-	"github.com/pojntfx/r3map/pkg/device"
+	"github.com/pojntfx/r3map/pkg/mount"
 	"github.com/pojntfx/r3map/pkg/services"
 	"github.com/pojntfx/r3map/pkg/utils"
 )
@@ -123,7 +123,7 @@ func main() {
 		)
 	}
 
-	dev := device.NewDevice(
+	dev := mount.NewDirectPathMount(
 		b,
 		devFile,
 

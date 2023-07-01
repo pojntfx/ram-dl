@@ -19,11 +19,11 @@ It is mostly intended as a tech demo for [r3map](https://github.com/pojntfx/r3ma
 
 `ram-dl` achieves this by essentially doing the following:
 
-1. Starting a `go-nbd` server _and_ client locally with r3map's [Device API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/device)
+1. Starting a `go-nbd` server _and_ client locally with r3map's [Direct Mount API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/mount)
 2. Connecting the NBD _server_ to a remote fRPC backend provided by `ram-ul`
 3. Calling `mkswap`, `swapon` and `swapoff`, which enables paging out to the block device provided by the NBD client and thus to the connected remote fRPC backend.
 
-For most real-world use cases, using [r3map](https://github.com/pojntfx/r3map)'s [Mount API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/mount) or [Migration API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/migration) directly is the better (and much faster) option, but if you just want to see the [Download More RAM](https://knowyourmeme.com/memes/download-more-ram) meme implemented in real life, you've come to the right place!
+For most real-world use cases, using [r3map](https://github.com/pojntfx/r3map)'s [Managed Mount API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/mount) or [Migration API](https://pkg.go.dev/github.com/pojntfx/r3map@main/pkg/migration) directly is the better (and much faster) option, but if you just want to see the [Download More RAM](https://knowyourmeme.com/memes/download-more-ram) meme implemented in real life, you've come to the right place!
 
 ## Installation
 

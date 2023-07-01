@@ -3,13 +3,14 @@ module github.com/pojntfx/ram-dl
 go 1.20
 
 require (
-	github.com/pojntfx/go-nbd v0.1.9
-	github.com/pojntfx/r3map v0.0.0-20230629193227-82982571ab47
+	github.com/pojntfx/go-nbd v0.1.10
+	github.com/pojntfx/r3map v0.0.0-20230701225439-3e99062cd1d4
 )
 
 require (
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/edsrzf/mmap-go v1.1.0 // indirect
 	github.com/go-ini/ini v1.67.0 // indirect
 	github.com/gocql/gocql v1.5.2 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
