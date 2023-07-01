@@ -58,6 +58,7 @@ $ ram-ul --size 4294967296
 On your local system, start `ram-dl`. This will mount the remote system's exposed memory region, file or directory using fRPC and r3map as swap space, and umount it as soon as you interrupt the app:
 
 ```shell
+$ sudo modprobe nbd
 $ sudo ram-dl --raddr localhost:1337
 2023/06/30 14:54:22 Connected to localhost:1337
 2023/06/30 14:54:22 Ready on /dev/nbd0
@@ -136,6 +137,7 @@ $ git clone https://github.com/pojntfx/ram-dl.git
 $ cd ram-dl
 $ make depend
 $ make && sudo make install
+$ sudo modprobe nbd
 $ ram-ul
 # In another terminal
 $ sudo ram-dl
