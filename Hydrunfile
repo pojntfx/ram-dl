@@ -44,12 +44,12 @@ if [ "$1" = "gccgo" ]; then
   apt update
   apt install -y curl git
 
-  # Configure Git
-  git config --global --add safe.directory '*'
-
   # Install bagccgop
   curl -L -o /tmp/bagccgop "https://github.com/pojntfx/bagccgop/releases/latest/download/bagccgop.linux-$(uname -m)"
   install /tmp/bagccgop /usr/local/bin
+
+  # Configure Git
+  git config --global --add safe.directory '*'
 
   # Build
   GOFLAGS='-gccgoflags=-static' bagccgop -x '(linux/alpha|linux/mipsle|linux/ppc|linux/sparc64)' -j1 -b "$2" -n -s 'make' -p "make build/$2 DST=\$DST" -d out
