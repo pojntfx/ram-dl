@@ -27,24 +27,26 @@ jobs:
             flags: ""
             cmd: ./Hydrunfile go ram-dl
             dst: out/*
-          - id: gccgo-ram-dl
-            src: .
-            os: ghcr.io/pojntfx/bagccgop-base-sid
-            flags: -e '--privileged'
-            cmd: ./Hydrunfile gccgo ram-dl
-            dst: out/*
+          # Disabled until `gccgo` supports generics/Go 1.21: https://go.dev/doc/install/gccgo
+          # - id: gccgo-ram-dl
+          #   src: .
+          #   os: ghcr.io/pojntfx/bagccgop-base-sid
+          #   flags: -e '--privileged'
+          #   cmd: ./Hydrunfile gccgo ram-dl
+          #   dst: out/*
           - id: go-ram-ul
             src: .
             os: golang:bookworm
             flags: ""
             cmd: ./Hydrunfile go ram-ul
             dst: out/*
-          - id: gccgo-ram-ul
-            src: .
-            os: ghcr.io/pojntfx/bagccgop-base-sid
-            flags: -e '--privileged'
-            cmd: ./Hydrunfile gccgo ram-ul
-            dst: out/*
+          # Disabled until `gccgo` supports generics/Go 1.21: https://go.dev/doc/install/gccgo
+          # - id: gccgo-ram-ul
+          #   src: .
+          #   os: ghcr.io/pojntfx/bagccgop-base-sid
+          #   flags: -e '--privileged'
+          #   cmd: ./Hydrunfile gccgo ram-ul
+          #   dst: out/*
 
     steps:
       - name: Maximize build space
