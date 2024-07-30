@@ -1,8 +1,10 @@
-# ram-dl
+<img alt="Project icon" style="vertical-align: middle;" src="./docs/icon.svg" width="128" height="128" align="left">
 
-![Logo](./docs/logo-readme.png)
+# r3map
 
 A tool to download more RAM (yes, seriously!)
+
+<br/>
 
 [![hydrun CI](https://github.com/pojntfx/ram-dl/actions/workflows/hydrun.yaml/badge.svg)](https://github.com/pojntfx/ram-dl/actions/workflows/hydrun.yaml)
 [![Matrix](https://img.shields.io/matrix/go-nbd:matrix.org)](https://matrix.to/#/#ram-dl:matrix.org?via=matrix.org)
@@ -40,7 +42,7 @@ $ sudo install /tmp/ram-ul /usr/local/bin
 
 You can find binaries for more architectures on [GitHub releases](https://github.com/pojntfx/ram-dl/releases).
 
-## Usage
+## Tutorial
 
 > TL;DR: "Upload" RAM with `ram-ul`, "download" the RAM with `ram-dl`, done!
 
@@ -95,6 +97,8 @@ Usage of ram-dl:
     	Whether the backend requires to be interfaced with in fixed chunks (default true)
   -raddr string
     	Remote address for the fRPC r3map backend server (default "localhost:1337")
+  -size int
+    	Size of the memory region or file to allocate (default 4294967296)
   -verbose
     	Whether to enable verbose logging
 ```
@@ -147,6 +151,6 @@ Have any questions or need help? Chat with us [on Matrix](https://matrix.to/#/#r
 
 ## License
 
-ram-dl (c) 2023 Felicitas Pojtinger and contributors
+ram-dl (c) 2024 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0
