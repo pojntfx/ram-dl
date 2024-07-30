@@ -103,7 +103,7 @@ func main() {
 	}
 
 	errs := make(chan error)
-	server, err := v1frpc.NewServer(services.NewBackendFrpc(services.NewBackend(b, *verbose, *chunkSize)), nil, nil)
+	server, err := v1frpc.NewServer(services.NewBackendServiceFrpc(services.NewBackend(b, *verbose, *chunkSize)), nil, nil)
 	if err != nil {
 		panic(err)
 	}

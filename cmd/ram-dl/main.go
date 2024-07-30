@@ -23,6 +23,7 @@ import (
 func main() {
 	raddr := flag.String("raddr", "localhost:1337", "Remote address for the fRPC r3map backend server")
 
+	size := flag.Int64("size", 4096*1024*1024, "Size of the memory region or file to allocate")
 	chunkSize := flag.Int64("chunk-size", 4096, "Chunk size to use")
 
 	chunking := flag.Bool("chunking", true, "Whether the backend requires to be interfaced with in fixed chunks")
@@ -86,14 +87,6 @@ func main() {
 
 				return int(res.Length), nil
 			},
-			Size: func(context context.Context) (int64, error) {
-				res, err := client.Backend.Size(ctx, &v1frpc.ComPojtingerFelicitasR3MapMountV1SizeArgs{})
-				if err != nil {
-					return 0, err
-				}
-
-				return res.Size, nil
-			},
 			Sync: func(context context.Context) error {
 				if _, err := client.Backend.Sync(ctx, &v1frpc.ComPojtingerFelicitasR3MapMountV1SyncArgs{}); err != nil {
 					return err
@@ -102,19 +95,15 @@ func main() {
 				return nil
 			},
 		},
+		*size,
 		*verbose,
 	)
-
-	size, err := b.Size()
-	if err != nil {
-		panic(err)
-	}
 
 	if *chunking {
 		b = lbackend.NewReaderAtBackend(
 			chunks.NewArbitraryReadWriterAt(
 				chunks.NewChunkedReadWriterAt(
-					b, *chunkSize, size / *chunkSize),
+					b, *chunkSize, *size / *chunkSize),
 				*chunkSize,
 			),
 			(b).Size,
