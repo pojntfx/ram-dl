@@ -1,6 +1,6 @@
 <img alt="Project icon" style="vertical-align: middle;" src="./docs/icon.svg" width="128" height="128" align="left">
 
-# r3map
+# ram-dl
 
 A tool to download more RAM (yes, seriously!)
 
